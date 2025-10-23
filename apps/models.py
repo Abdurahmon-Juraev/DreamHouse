@@ -1,8 +1,9 @@
 # app/property/py
 from django.contrib.auth import get_user_model
-from django.db.models import Model, ForeignKey, OneToOneField, CASCADE, SET_NULL, ImageField, CharField, SlugField, \
-    TextField, DecimalField, PositiveSmallIntegerField, \
+from django.db.models import Model, ForeignKey, OneToOneField, CASCADE, SET_NULL, ImageField, CharField, TextField, \
+    DecimalField, PositiveSmallIntegerField, \
     BooleanField, DateTimeField
+from django.db.models.enums import TextChoices
 
 User = get_user_model()
 
@@ -42,7 +43,6 @@ class District(Model):
         return f"{self.name} — {self.city.name}"
 
 
-
 class Agent(Model):
     user = OneToOneField(User, on_delete=CASCADE, related_name='agent_profile')
     phone = CharField(max_length=30, blank=True, null=True)
@@ -62,16 +62,21 @@ class ResidentialComplex(Model):
 
 
 class Property(Model):
-    title = CharField(max_length=255)
-    description = TextField(blank=True)
+    class Currency(TextChoices):
+        USD = 'usd', 'Dollar'
+        UZS = 'uzs', "So'm"
+
+    title = CharField(max_length=255)  # +
+    description = TextField(blank=True)  # ckeditor5
     agent = ForeignKey(Agent, related_name='properties', on_delete=SET_NULL, null=True, blank=True)
     property_type = CharField(max_length=50, choices=PROPERTY_TYPE_CHOICES)
     transaction_type = CharField(max_length=10, choices=TRANSACTION_CHOICES, default='sale')
-    price = DecimalField(max_digits=15, decimal_places=2)
-    currency = CharField(max_length=3, choices=CURRENCY_CHOICES, default='UZS')
-    city = ForeignKey('apps.City', on_delete=SET_NULL, null=True)
-    district = ForeignKey(District, on_delete=SET_NULL, null=True, blank=True)
-    address = CharField(max_length=255, blank=True)
+    price = DecimalField(max_digits=15, decimal_places=2)  # +
+    currency = CharField(max_length=3, choices=Currency.choices, default=Currency.UZS)  # +
+    region = ForeignKey('apps.City', CASCADE)  # +
+    district = ForeignKey('apps.District', CASCADE)  # +
+    address = CharField(max_length=255, blank=True, null=True)  # +
+    # location = ?
     rooms = PositiveSmallIntegerField(choices=ROOM_CHOICES, null=True, blank=True)
     area = DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)  # sqm
     is_new_building = BooleanField(default=False)

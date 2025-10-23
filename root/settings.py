@@ -1,11 +1,11 @@
-
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
+
 load_dotenv('.env')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -17,7 +17,6 @@ SECRET_KEY = 'django-insecure-wav%=(1gxkecdju2f5pca4pmb9lds25j7fdfghjkjjua7$vd27
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -62,7 +61,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'root.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -76,8 +74,6 @@ DATABASES = {
         'PORT': os.getenv('POSTGRES_PORT'),
     }
 }
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -109,7 +105,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
