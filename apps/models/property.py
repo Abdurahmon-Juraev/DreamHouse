@@ -1,32 +1,12 @@
-# app/property/py
 from django.contrib.auth import get_user_model
-from django.db.models import Model, ForeignKey, OneToOneField, CASCADE, SET_NULL, ImageField, CharField, TextField, \
+from django.db.models import ImageField, TextField, \
     DecimalField, PositiveSmallIntegerField, \
     BooleanField, DateTimeField
+from django.db.models import Model, ForeignKey, CASCADE, SET_NULL, CharField
 from django.db.models.enums import TextChoices
+from location_field.forms.spatial import LocationField
 
 User = get_user_model()
-
-CURRENCY_CHOICES = [
-    ('UZS', "so'm"),
-    ('USD', 'USD'),
-]
-
-TRANSACTION_CHOICES = [
-    ('sale', 'Sale'),
-    ('rent', 'Rent'),
-]
-
-PROPERTY_TYPE_CHOICES = [
-    ('apartment', 'Apartment'),
-    ('house', 'House'),
-    ('land', 'Land'),
-    ('office', 'Office'),
-    ('res_complex', 'Residential complex'),
-]
-
-ROOM_CHOICES = [(i, f"{i}-room") for i in range(1, 6)]
-
 
 class City(Model):
     name = CharField(max_length=100)
@@ -43,14 +23,6 @@ class District(Model):
         return f"{self.name} — {self.city.name}"
 
 
-class Agent(Model):
-    user = OneToOneField(User, on_delete=CASCADE, related_name='agent_profile')
-    phone = CharField(max_length=30, blank=True, null=True)
-    company = CharField(max_length=200, null=True, blank=True)
-
-    def __str__(self):
-        return self.user.get_full_name() or self.user.username
-
 
 class ResidentialComplex(Model):
     name = CharField(max_length=255)
@@ -60,27 +32,46 @@ class ResidentialComplex(Model):
     def __str__(self):
         return self.name
 
-
 class Property(Model):
     class Currency(TextChoices):
         USD = 'usd', 'Dollar'
         UZS = 'uzs', "So'm"
 
+    class TRANSACTION(TextChoices):
+        Sale = 'sale', 'Sale'
+        Rent = 'rent', 'Rent'
+
+    class PropertyType(TextChoices):
+        Apartment = 'Apartment', 'Apartment'
+        Land = 'Land', 'Land'
+        Office = 'Office', 'Office'
+        House = 'House', 'House'
+        Residential = 'Residential complex', 'Residential complex'
+
+    class ROOM(TextChoices):
+        bir = '1', '1'
+        ikki = '2', '2'
+        uch = '3', '3'
+        tort = '4', '4'
+        besh = '5', '5'
+        olti = '6', '6'
+        yetti = '7', '7'
+
     title = CharField(max_length=255)  # +
     description = TextField(blank=True)  # ckeditor5
-    agent = ForeignKey(Agent, related_name='properties', on_delete=SET_NULL, null=True, blank=True)
-    property_type = CharField(max_length=50, choices=PROPERTY_TYPE_CHOICES)
-    transaction_type = CharField(max_length=10, choices=TRANSACTION_CHOICES, default='sale')
+    agent = ForeignKey('apps.User', related_name='properties', on_delete=SET_NULL, null=True, blank=True)
+    property_type = CharField(max_length=50, choices=PropertyType.choices, default=PropertyType.Apartment)
+    transaction_type = CharField(max_length=10, choices=TRANSACTION.choices, default=TRANSACTION.Sale)
     price = DecimalField(max_digits=15, decimal_places=2)  # +
     currency = CharField(max_length=3, choices=Currency.choices, default=Currency.UZS)  # +
     region = ForeignKey('apps.City', CASCADE)  # +
     district = ForeignKey('apps.District', CASCADE)  # +
     address = CharField(max_length=255, blank=True, null=True)  # +
-    # location = ?
-    rooms = PositiveSmallIntegerField(choices=ROOM_CHOICES, null=True, blank=True)
+    location = LocationField(zoom=True)
+    rooms = PositiveSmallIntegerField(choices=ROOM.choices, default=ROOM.bir)
     area = DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)  # sqm
     is_new_building = BooleanField(default=False)
-    residential_complex = ForeignKey(ResidentialComplex, on_delete=SET_NULL, null=True, blank=True)
+    residential_complex = ForeignKey('apps.ResidentialComplex', on_delete=SET_NULL, null=True, blank=True)
     created_at = DateTimeField(auto_now_add=True)
     updated_at = DateTimeField(auto_now=True)
 
@@ -97,3 +88,5 @@ class PropertyImage(Model):
 
     def __str__(self):
         return f"Image for {self.property_id}"
+
+
