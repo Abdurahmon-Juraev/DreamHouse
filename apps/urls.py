@@ -1,6 +1,6 @@
 
 from django.urls import path
-from apps.views import PropertyListCreateView, SendCodeAPIView, VerifyCodeAPIView
+from apps.views import PropertyListCreateView
 
 urlpatterns = [
     path('properties/', PropertyListCreateView.as_view(), name='property-list'),
@@ -9,7 +9,7 @@ urlpatterns = [
     # path('categories/', CategoryListView.as_view(), name='category-list'),
     # path('cities/', CityListView.as_view(), name='city-list'),
     # path('districts/', DistrictListView.as_view(), name='district-list'),
-    path('send-sms-code/', SendCodeAPIView.as_view(), name='send-sms-code'),
-    path('verify-sms-code/',VerifyCodeAPIView.as_view(), name='verify-sms-code'),
+    # path('send-sms-code/', SendCodeAPIView.as_view(), name='send-sms-code'),
+    # path('verify-sms-code/',VerifyCodeAPIView.as_view(), name='verify-sms-code'),
 ]
 

@@ -4,9 +4,10 @@ from django.db.models import ImageField, TextField, \
     BooleanField, DateTimeField
 from django.db.models import Model, ForeignKey, CASCADE, SET_NULL, CharField
 from django.db.models.enums import TextChoices
-from location_field.forms.spatial import LocationField
+# from location_field.models.spatial import LocationField
 
 User = get_user_model()
+
 
 class City(Model):
     name = CharField(max_length=100)
@@ -23,7 +24,6 @@ class District(Model):
         return f"{self.name} — {self.city.name}"
 
 
-
 class ResidentialComplex(Model):
     name = CharField(max_length=255)
     city = ForeignKey(City, on_delete=SET_NULL, null=True, blank=True)
@@ -31,6 +31,7 @@ class ResidentialComplex(Model):
 
     def __str__(self):
         return self.name
+
 
 class Property(Model):
     class Currency(TextChoices):
@@ -67,7 +68,7 @@ class Property(Model):
     region = ForeignKey('apps.City', CASCADE)  # +
     district = ForeignKey('apps.District', CASCADE)  # +
     address = CharField(max_length=255, blank=True, null=True)  # +
-    location = LocationField(zoom=True)
+    # location = LocationField(zoom=True)
     rooms = PositiveSmallIntegerField(choices=ROOM.choices, default=ROOM.bir)
     area = DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)  # sqm
     is_new_building = BooleanField(default=False)
@@ -88,5 +89,3 @@ class PropertyImage(Model):
 
     def __str__(self):
         return f"Image for {self.property_id}"
-
-
