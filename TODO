@@ -1,15 +1,8 @@
 https://www.figma.com/design/e1dWEEkTgqjqBnkG8LpqSJ/65--Real-Estate-Website-Templates--Community-?node-id=0-1&p=f&t=kFITB1asVT8BrhNN-0
 uybor.uz
 
-
 Task
-1. userga phone qoshish (modelsni bolaklash)
-2. apilar
-auth/send-sms (phone)
-auth/check-code (phone, code)
-
-3. region, district modellari yozish (fixture qilib qoshish)
-
-
-
-xolmomin
+1. userga phone qoshish (modelsni bolaklash)+
+2. login, register apilarini chiqarish (jwt qaytarsin)
+3. sms yuboriladigan qilish kerak (redisda 1 minut saqlasin)
+4.
