@@ -1,20 +1,47 @@
-from django.shortcuts import render
-
-from rest_framework.views import APIView
+from drf_spectacular.utils import extend_schema
+from rest_framework import permissions, status
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
 from rest_framework.response import Response
-from rest_framework import status, permissions, generics, filters
-from rest_framework.parsers import MultiPartParser, FormParser
-from .models import Property, City, District, PropertyImage
-from .serializers import PropertySerializer, CitySerializer, DistrictSerializer, PropertyImageSerializer
+from rest_framework.views import APIView
 
-class PropertyListCreateView(generics.ListCreateAPIView):
-    queryset = Property.objects.select_related('city','district','agent').prefetch_related('images').all()
+from .models import Property
+from .serializers import (PropertySerializer, SendSmsCodeSerializer,
+                          VerifySmsCodeSerializer)
+from .utils import check_sms_code, random_code, send_sms_code
+
+
+@extend_schema(tags=['Auth'])
+class SendCodeAPIView(APIView):
+    serializer_class = SendSmsCodeSerializer
+    authentication_classes = ()
+
+    def post(self, request, *args, **kwargs):
+        serializer = SendSmsCodeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        code = random_code()
+        phone = serializer.data['phone']
+        send_sms_code(phone, code)
+        return Response({"message": "send sms code"})
+
+@extend_schema(tags=['Auth'])
+class LoginAPIView(APIView):
+    serializer_class = VerifySmsCodeSerializer
+    authentication_classes = ()
+
+    def post(self, request, *args, **kwargs):
+        serializer = VerifySmsCodeSerializer(data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+
+        is_valid_code = check_sms_code(**serializer.data)
+        if not is_valid_code:
+            return Response({"message": "invalid code"}, status.HTTP_400_BAD_REQUEST)
+
+        return Response(serializer.get_data)
+
+
+class PropertyListCreateView(ListCreateAPIView):
+    queryset = Property.objects.all()
     serializer_class = PropertySerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    parser_classes = [MultiPartParser, FormParser]
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['title', 'city__name', 'district__name']
-    ordering_fields = ['price', 'created_at']
 
     def perform_create(self, serializer):
 
@@ -22,3 +49,10 @@ class PropertyListCreateView(generics.ListCreateAPIView):
             serializer.save(agent=self.request.user.agent_profile)
         else:
             serializer.save()
+
+
+class PropertyDetailAPIView(RetrieveAPIView):
+    queryset = Property.objects.all()
+    serializer_class = PropertySerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+

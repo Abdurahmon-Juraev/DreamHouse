@@ -1,12 +1,9 @@
 from django.contrib.auth import get_user_model
-from django.db.models import ImageField, TextField, \
-    DecimalField, PositiveSmallIntegerField, \
-    BooleanField, DateTimeField
-from django.db.models import Model, ForeignKey, CASCADE, SET_NULL, CharField
+from django.db.models import (CASCADE, SET_NULL, BooleanField, CharField,
+                              DateTimeField, DecimalField, ForeignKey,
+                              ImageField, Model, PositiveSmallIntegerField,
+                              TextField)
 from django.db.models.enums import TextChoices
-# from location_field.models.spatial import LocationField
-
-User = get_user_model()
 
 
 class City(Model):
@@ -17,7 +14,7 @@ class City(Model):
 
 
 class District(Model):
-    city = ForeignKey(City, related_name='districts', on_delete=CASCADE)
+    city = ForeignKey('apps.City', related_name='districts', on_delete=CASCADE)
     name = CharField(max_length=100)
 
     def __str__(self):
@@ -26,7 +23,7 @@ class District(Model):
 
 class ResidentialComplex(Model):
     name = CharField(max_length=255)
-    city = ForeignKey(City, on_delete=SET_NULL, null=True, blank=True)
+    city = ForeignKey('apps.City', on_delete=SET_NULL, null=True, blank=True)
     address = CharField(max_length=255, blank=True)
 
     def __str__(self):
@@ -58,29 +55,20 @@ class Property(Model):
         olti = '6', '6'
         yetti = '7', '7'
 
-    title = CharField(max_length=255)  # +
-    description = TextField(blank=True)  # ckeditor5
+    title = CharField(max_length=255)
+    description = TextField(blank=True)
     agent = ForeignKey('apps.User', related_name='properties', on_delete=SET_NULL, null=True, blank=True)
     property_type = CharField(max_length=50, choices=PropertyType.choices, default=PropertyType.Apartment)
     transaction_type = CharField(max_length=10, choices=TRANSACTION.choices, default=TRANSACTION.Sale)
-    price = DecimalField(max_digits=15, decimal_places=2)  # +
-    currency = CharField(max_length=3, choices=Currency.choices, default=Currency.UZS)  # +
-    region = ForeignKey('apps.City', CASCADE)  # +
-    district = ForeignKey('apps.District', CASCADE)  # +
-    address = CharField(max_length=255, blank=True, null=True)  # +
-    # location = LocationField(zoom=True)
+    price = DecimalField(max_digits=15, decimal_places=2)
+    currency = CharField(max_length=3, choices=Currency.choices, default=Currency.UZS)
+    region = ForeignKey('apps.City', CASCADE)
+    district = ForeignKey('apps.District', CASCADE)
+    address = CharField(max_length=255, blank=True, null=True)
     rooms = PositiveSmallIntegerField(choices=ROOM.choices, default=ROOM.bir)
-    area = DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)  # sqm
-    is_new_building = BooleanField(default=False)
     residential_complex = ForeignKey('apps.ResidentialComplex', on_delete=SET_NULL, null=True, blank=True)
     created_at = DateTimeField(auto_now_add=True)
     updated_at = DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ['-created_at']
-
-    def __str__(self):
-        return f"{self.title} — {self.city.name if self.city else 'NoCity'}"
 
 
 class PropertyImage(Model):
@@ -89,3 +77,11 @@ class PropertyImage(Model):
 
     def __str__(self):
         return f"Image for {self.property_id}"
+
+
+class Like(Model):
+    property = ForeignKey(Property, related_name='likes', on_delete=CASCADE)
+    user = ForeignKey('apps.User', related_name='likes', on_delete=CASCADE)
+
+    def __str__(self):
+        return f"Likes for {self.property}"

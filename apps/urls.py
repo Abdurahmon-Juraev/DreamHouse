@@ -1,10 +1,13 @@
 
 from django.urls import path
-from apps.views import PropertyListCreateView
+
+from apps.views import PropertyDetailAPIView, PropertyListCreateView, SendCodeAPIView, LoginAPIView
 
 urlpatterns = [
+    path('auth/send-code', SendCodeAPIView.as_view(), name='token_obtain_pair'),
+    path('auth/verify-code', LoginAPIView.as_view(), name='token_obtain_pair'),
     path('properties/', PropertyListCreateView.as_view(), name='property-list'),
-    # path('properties/<int:pk>/', PropertyDetailView.as_view(), name='property-detail'),
+    path('properties/<int:pk>/', PropertyDetailAPIView.as_view(), name='property-detail'),
     # path('properties/<int:pk>/images/', PropertyImageUploadView.as_view(), name='property-images'),
     # path('categories/', CategoryListView.as_view(), name='category-list'),
     # path('cities/', CityListView.as_view(), name='city-list'),
