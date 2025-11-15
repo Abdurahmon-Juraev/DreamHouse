@@ -3,13 +3,13 @@ uybor.uz
 
 
 Task
-1. userga phone qoshish (modelsni bolaklash)
+1. userga phone qoshish (modelsni bolaklash) +
 2. apilar
-auth/send-sms (phone)
-auth/check-code (phone, code)
-3. region, district modellari yozish (fixture qilib qoshish)
+auth/send-sms (phone) +
+auth/check-code (phone, code) +
+3. region, district modellari yozish (fixture qilib qoshish) +
 4. fixture qoshish (property modeliga)
-5. login, register apilarini chiqarish (jwt qaytarsin)
-6. sms yuboriladigan qilish kerak (redisda 1 minut saqlasin)
+5. login, register apilarini chiqarish (jwt qaytarsin) +
+6. sms yuboriladigan qilish kerak (redisda 1 minut saqlasin) +
 7.
 

@@ -5,6 +5,7 @@ description = "Add your description here"
 requires-python = ">=3.12"
 dependencies = [
     "django==5.2.8",
+    "django-jazzmin>=3.0.1",
     "django-location-field>=2.7.3",
     "djangorestframework>=3.16.1",
     "djangorestframework-simplejwt>=5.5.1",
@@ -17,3 +18,9 @@ dependencies = [
     "redis==5.0.1",
     "six>=1.17.0",
 ]
+
+
+[tool.isort]
+profile = "hug"
+skip = "build,.tox,.venv"
+src_paths="isort,test"

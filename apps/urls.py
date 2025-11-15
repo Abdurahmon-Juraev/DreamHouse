@@ -1,7 +1,5 @@
-
+from apps.views import LoginAPIView, PropertyDetailAPIView, PropertyListCreateView, SendCodeAPIView
 from django.urls import path
-
-from apps.views import PropertyDetailAPIView, PropertyListCreateView, SendCodeAPIView, LoginAPIView
 
 urlpatterns = [
     path('auth/send-code', SendCodeAPIView.as_view(), name='token_obtain_pair'),
@@ -15,4 +13,3 @@ urlpatterns = [
     # path('send-sms-code/', SendCodeAPIView.as_view(), name='send-sms-code'),
     # path('verify-sms-code/',VerifyCodeAPIView.as_view(), name='verify-sms-code'),
 ]
-

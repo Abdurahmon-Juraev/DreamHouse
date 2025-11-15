@@ -5,8 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Property
-from .serializers import (PropertySerializer, SendSmsCodeSerializer,
-                          VerifySmsCodeSerializer)
+from .serializers import PropertySerializer, SendSmsCodeSerializer, VerifySmsCodeSerializer
 from .utils import check_sms_code, random_code, send_sms_code
 
 
@@ -18,10 +17,14 @@ class SendCodeAPIView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = SendSmsCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        phone = request.data.get('phone')
         code = random_code()
-        phone = serializer.data['phone']
-        send_sms_code(phone, code)
-        return Response({"message": "send sms code"})
+        valid, _ttl = send_sms_code(phone, code)
+        if valid:
+            return Response({"message": "send sms code"})
+
+        return Response({"detail": f"You can send again in {int(_ttl)} seconds"})
+
 
 @extend_schema(tags=['Auth'])
 class LoginAPIView(APIView):
@@ -55,4 +58,3 @@ class PropertyDetailAPIView(RetrieveAPIView):
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-

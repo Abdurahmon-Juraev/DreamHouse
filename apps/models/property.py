@@ -1,8 +1,15 @@
-from django.contrib.auth import get_user_model
-from django.db.models import (CASCADE, SET_NULL, BooleanField, CharField,
-                              DateTimeField, DecimalField, ForeignKey,
-                              ImageField, Model, PositiveSmallIntegerField,
-                              TextField)
+from django.db.models import (
+    CASCADE,
+    SET_NULL,
+    CharField,
+    DateTimeField,
+    DecimalField,
+    ForeignKey,
+    ImageField,
+    IntegerField,
+    Model,
+    TextField,
+)
 from django.db.models.enums import TextChoices
 
 
@@ -65,7 +72,7 @@ class Property(Model):
     region = ForeignKey('apps.City', CASCADE)
     district = ForeignKey('apps.District', CASCADE)
     address = CharField(max_length=255, blank=True, null=True)
-    rooms = PositiveSmallIntegerField(choices=ROOM.choices, default=ROOM.bir)
+    rooms = IntegerField(choices=ROOM.choices, default=ROOM.bir)
     residential_complex = ForeignKey('apps.ResidentialComplex', on_delete=SET_NULL, null=True, blank=True)
     created_at = DateTimeField(auto_now_add=True)
     updated_at = DateTimeField(auto_now=True)
