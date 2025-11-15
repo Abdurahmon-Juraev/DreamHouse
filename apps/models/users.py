@@ -32,12 +32,10 @@ class User(AbstractUser):
 
 class UserProfile(Model):
     class UserType(TextChoices):
-        Admin = 'admin'
+        ADMIN = 'admin', 'Admin'
         Private_owner = 'private_owner'
-        owner = 'owner'
+        OWNER = 'owner', 'Owner'
 
     user = OneToOneField(User, CASCADE)
-    FirstName = CharField(max_length=30, blank=True)
-    LastName = CharField(max_length=30, blank=True)
     CompanyName = CharField(max_length=30, blank=True)
     TypeUser = CharField(max_length=15, choices=UserType.choices, default=UserType.Private_owner)
