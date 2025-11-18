@@ -1,0 +1,162 @@
+[
+{
+  "model": "apps.district",
+  "pk": 1,
+  "fields": {
+    "city": 1,
+    "name": "Yakkasaroy"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 2,
+  "fields": {
+    "city": 1,
+    "name": "Mirobod"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 3,
+  "fields": {
+    "city": 2,
+    "name": "Registon"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 4,
+  "fields": {
+    "city": 2,
+    "name": "Buloqchi"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 5,
+  "fields": {
+    "city": 3,
+    "name": "G'ijduvon"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 6,
+  "fields": {
+    "city": 3,
+    "name": "Olot"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 7,
+  "fields": {
+    "city": 5,
+    "name": "Baxmal"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 8,
+  "fields": {
+    "city": 5,
+    "name": "Arnasoy"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 9,
+  "fields": {
+    "city": 6,
+    "name": "Brighton"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 10,
+  "fields": {
+    "city": 6,
+    "name": "Bruklin"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 11,
+  "fields": {
+    "city": 7,
+    "name": "Austin"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 12,
+  "fields": {
+    "city": 7,
+    "name": "Avondale"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 13,
+  "fields": {
+    "city": 8,
+    "name": "Yakima"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 14,
+  "fields": {
+    "city": 8,
+    "name": "Wenatchee"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 15,
+  "fields": {
+    "city": 4,
+    "name": "Kirgeli"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 16,
+  "fields": {
+    "city": 4,
+    "name": "Margilan"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 17,
+  "fields": {
+    "city": 9,
+    "name": "Latina"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 18,
+  "fields": {
+    "city": 9,
+    "name": "Villaverde"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 19,
+  "fields": {
+    "city": 10,
+    "name": "Outer West"
+  }
+},
+{
+  "model": "apps.district",
+  "pk": 20,
+  "fields": {
+    "city": 10,
+    "name": "Upper north shore"
+  }
+}
+]

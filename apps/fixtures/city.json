@@ -1,0 +1,72 @@
+[
+{
+  "model": "apps.city",
+  "pk": 1,
+  "fields": {
+    "name": "Toshkent"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 2,
+  "fields": {
+    "name": "Samarqand"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 3,
+  "fields": {
+    "name": "Buxoro"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 4,
+  "fields": {
+    "name": "Farg'ona"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 5,
+  "fields": {
+    "name": "Jizzax"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 6,
+  "fields": {
+    "name": "New York"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 7,
+  "fields": {
+    "name": "Chicago"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 8,
+  "fields": {
+    "name": "Washington"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 9,
+  "fields": {
+    "name": "Madrid"
+  }
+},
+{
+  "model": "apps.city",
+  "pk": 10,
+  "fields": {
+    "name": "Sydney"
+  }
+}
+]
