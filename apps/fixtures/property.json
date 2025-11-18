@@ -1,0 +1,402 @@
+[
+  {
+    "model": "apps.Property",
+    "pk": 1,
+    "fields": {
+      "title": "Chilonzorda shinam 2 xonali kvartira",
+      "description": "Metro yaqinida, yevro remont qilingan, hamma jihozlari bilan.",
+      "agent": 1,
+      "property_type": "Apartment",
+      "transaction_type": "sale",
+      "price": "55000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 1,
+      "address": "Chilonzor 7-kvartal, 15-uy",
+      "rooms": 2,
+      "residential_complex": null,
+      "created_at": "2023-10-01T10:00:00Z",
+      "updated_at": "2023-10-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 2,
+    "fields": {
+      "title": "Yunusobodda keng hovli sotiladi",
+      "description": "6 sotix, 2 qavatli uy, basseyn va sauna bor.",
+      "agent": 1,
+      "property_type": "House",
+      "transaction_type": "sale",
+      "price": "250000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 2,
+      "address": "Yunusobod, Bodomzor mahallasi",
+      "rooms": 6,
+      "residential_complex": null,
+      "created_at": "2023-10-02T11:00:00Z",
+      "updated_at": "2023-10-02T11:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 3,
+    "fields": {
+      "title": "Markazda ofis ijaraga beriladi",
+      "description": "Biznes markazda joylashgan, internet va qo'riqlash xizmati mavjud.",
+      "agent": 2,
+      "property_type": "Office",
+      "transaction_type": "rent",
+      "price": "1500.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 3,
+      "address": "Mirobod tumani, Oybek ko'chasi",
+      "rooms": 3,
+      "residential_complex": null,
+      "created_at": "2023-10-03T12:30:00Z",
+      "updated_at": "2023-10-03T12:30:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 4,
+    "fields": {
+      "title": "Qibrayda yer uchastkasi",
+      "description": "Dacha qurish uchun qulay joy, suv va gaz o'tgan.",
+      "agent": 1,
+      "property_type": "Land",
+      "transaction_type": "sale",
+      "price": "40000.00",
+      "currency": "usd",
+      "region": 2,
+      "district": 4,
+      "address": "Toshkent viloyati, Qibray tumani",
+      "rooms": 1,
+      "residential_complex": null,
+      "created_at": "2023-10-04T09:00:00Z",
+      "updated_at": "2023-10-04T09:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 5,
+    "fields": {
+      "title": "Tashkent City'da lyuks kvartira",
+      "description": "Panorama ko'rinishi, premium klassdagi turar joy majmuasi.",
+      "agent": 2,
+      "property_type": "Residential complex",
+      "transaction_type": "sale",
+      "price": "180000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 5,
+      "address": "Shayxontohur, Tashkent City",
+      "rooms": 3,
+      "residential_complex": 1,
+      "created_at": "2023-10-05T14:20:00Z",
+      "updated_at": "2023-10-05T14:20:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 6,
+    "fields": {
+      "title": "Sergelida arzon 1 xonali uy",
+      "description": "Yangi qurilgan uylardan, remontsiz (korobka).",
+      "agent": 1,
+      "property_type": "Apartment",
+      "transaction_type": "sale",
+      "price": "35000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 6,
+      "address": "Sergeli 5-mavze",
+      "rooms": 1,
+      "residential_complex": 2,
+      "created_at": "2023-10-06T16:00:00Z",
+      "updated_at": "2023-10-06T16:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 7,
+    "fields": {
+      "title": "Yakkasaroyda ofis binosi",
+      "description": "Alohida bino, 2 qavatli, ofis uchun mo'ljallangan.",
+      "agent": 2,
+      "property_type": "Office",
+      "transaction_type": "rent",
+      "price": "25000000.00",
+      "currency": "uzs",
+      "region": 1,
+      "district": 3,
+      "address": "Yakkasaroy, Muqimiy ko'chasi",
+      "rooms": 5,
+      "residential_complex": null,
+      "created_at": "2023-10-07T08:45:00Z",
+      "updated_at": "2023-10-07T08:45:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 8,
+    "fields": {
+      "title": "Mirzo Ulug'bekda 4 xonali kvartira",
+      "description": "Katta oila uchun, maktab va bog'cha yonida.",
+      "agent": 1,
+      "property_type": "Apartment",
+      "transaction_type": "sale",
+      "price": "95000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 7,
+      "address": "Buyuk Ipak Yo'li metro bekati",
+      "rooms": 4,
+      "residential_complex": null,
+      "created_at": "2023-10-08T10:15:00Z",
+      "updated_at": "2023-10-08T10:15:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 9,
+    "fields": {
+      "title": "Parkent tumanida dala hovli",
+      "description": "Tog' yonbag'rida, dam olish uchun ajoyib joy.",
+      "agent": 2,
+      "property_type": "House",
+      "transaction_type": "sale",
+      "price": "60000.00",
+      "currency": "usd",
+      "region": 2,
+      "district": 8,
+      "address": "Toshkent viloyati, Parkent",
+      "rooms": 3,
+      "residential_complex": null,
+      "created_at": "2023-10-09T13:00:00Z",
+      "updated_at": "2023-10-09T13:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 10,
+    "fields": {
+      "title": "Bektemirda ishlab chiqarish uchun yer",
+      "description": "Sanoat zonasi, katta yuk mashinalari kirishi uchun qulay.",
+      "agent": 1,
+      "property_type": "Land",
+      "transaction_type": "sale",
+      "price": "1200000000.00",
+      "currency": "uzs",
+      "region": 1,
+      "district": 9,
+      "address": "Bektemir tumani",
+      "rooms": 1,
+      "residential_complex": null,
+      "created_at": "2023-10-10T09:30:00Z",
+      "updated_at": "2023-10-10T09:30:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 11,
+    "fields": {
+      "title": "Chilanzorda talabalar uchun ijara",
+      "description": "Universitetlarga yaqin, 2 xonali, oddiy remont.",
+      "agent": 2,
+      "property_type": "Apartment",
+      "transaction_type": "rent",
+      "price": "400.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 1,
+      "address": "Chilonzor, G'ofur G'ulom parki",
+      "rooms": 2,
+      "residential_complex": null,
+      "created_at": "2023-10-11T11:20:00Z",
+      "updated_at": "2023-10-11T11:20:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 12,
+    "fields": {
+      "title": "Olmazorda yangi qurilgan uy (Novostroyka)",
+      "description": "Qora qamish, 5-qavat, lift bor.",
+      "agent": 1,
+      "property_type": "Residential complex",
+      "transaction_type": "sale",
+      "price": "48000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 10,
+      "address": "Olmazor tumani",
+      "rooms": 2,
+      "residential_complex": 3,
+      "created_at": "2023-10-12T15:45:00Z",
+      "updated_at": "2023-10-12T15:45:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 13,
+    "fields": {
+      "title": "Samarqand markazida mehmonxona binosi",
+      "description": "Sayyohlar gavjum joy, tayyor biznes.",
+      "agent": 1,
+      "property_type": "House",
+      "transaction_type": "sale",
+      "price": "500000.00",
+      "currency": "usd",
+      "region": 3,
+      "district": 11,
+      "address": "Samarqand shahar, Registon yaqini",
+      "rooms": 7,
+      "residential_complex": null,
+      "created_at": "2023-10-13T08:00:00Z",
+      "updated_at": "2023-10-13T08:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 14,
+    "fields": {
+      "title": "Qo'yliqda 3 xonali kvartira",
+      "description": "Bozor yaqinida, transport qatnovi yaxshi.",
+      "agent": 2,
+      "property_type": "Apartment",
+      "transaction_type": "sale",
+      "price": "42000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 9,
+      "address": "Qo'yliq massivi",
+      "rooms": 3,
+      "residential_complex": null,
+      "created_at": "2023-10-14T14:10:00Z",
+      "updated_at": "2023-10-14T14:10:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 15,
+    "fields": {
+      "title": "Yashnobodda kichik ofis",
+      "description": "Startaplar uchun qulay, 1 xona.",
+      "agent": 1,
+      "property_type": "Office",
+      "transaction_type": "rent",
+      "price": "2000000.00",
+      "currency": "uzs",
+      "region": 1,
+      "district": 12,
+      "address": "Yashnobod, Tuzel",
+      "rooms": 1,
+      "residential_complex": null,
+      "created_at": "2023-10-15T10:50:00Z",
+      "updated_at": "2023-10-15T10:50:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 16,
+    "fields": {
+      "title": "Buxoroda hovli uy",
+      "description": "Eski shahar qismida, milliy uslubda.",
+      "agent": 2,
+      "property_type": "House",
+      "transaction_type": "sale",
+      "price": "80000.00",
+      "currency": "usd",
+      "region": 4,
+      "district": 13,
+      "address": "Buxoro shahar",
+      "rooms": 5,
+      "residential_complex": null,
+      "created_at": "2023-10-16T17:00:00Z",
+      "updated_at": "2023-10-16T17:00:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 17,
+    "fields": {
+      "title": "Uchtepada 2 xonali kvartira ijarasi",
+      "description": "Oilaga uzoq muddatga beriladi.",
+      "agent": 1,
+      "property_type": "Apartment",
+      "transaction_type": "rent",
+      "price": "350.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 14,
+      "address": "Uchtepa tumani, Farhod bozori",
+      "rooms": 2,
+      "residential_complex": null,
+      "created_at": "2023-10-17T12:15:00Z",
+      "updated_at": "2023-10-17T12:15:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 18,
+    "fields": {
+      "title": "Zangiota tumanida bo'sh yer",
+      "description": "Issiqxona qurish uchun mos, 10 sotix.",
+      "agent": 2,
+      "property_type": "Land",
+      "transaction_type": "sale",
+      "price": "30000.00",
+      "currency": "usd",
+      "region": 2,
+      "district": 15,
+      "address": "Toshkent viloyati, Zangiota",
+      "rooms": 1,
+      "residential_complex": null,
+      "created_at": "2023-10-18T09:45:00Z",
+      "updated_at": "2023-10-18T09:45:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 19,
+    "fields": {
+      "title": "Yunusobodda Pentxaus",
+      "description": "Eng yuqori qavat, katta terrasa.",
+      "agent": 1,
+      "property_type": "Residential complex",
+      "transaction_type": "sale",
+      "price": "150000.00",
+      "currency": "usd",
+      "region": 1,
+      "district": 2,
+      "address": "Yunusobod 19-kvartal",
+      "rooms": 4,
+      "residential_complex": 1,
+      "created_at": "2023-10-19T13:30:00Z",
+      "updated_at": "2023-10-19T13:30:00Z"
+    }
+  },
+  {
+    "model": "apps.Property",
+    "pk": 20,
+    "fields": {
+      "title": "Shayxontohurda omborxona",
+      "description": "Quruq podval, tovar saqlash uchun.",
+      "agent": 2,
+      "property_type": "Office",
+      "transaction_type": "rent",
+      "price": "3000000.00",
+      "currency": "uzs",
+      "region": 1,
+      "district": 5,
+      "address": "Beruniy ko'chasi",
+      "rooms": 1,
+      "residential_complex": null,
+      "created_at": "2023-10-20T15:00:00Z",
+      "updated_at": "2023-10-20T15:00:00Z"
+    }
+  }
+]

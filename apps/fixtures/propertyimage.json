@@ -1,0 +1,42 @@
+[
+  {
+    "model": "apps.propertyimage",
+    "pk": 1,
+    "fields": {
+      "property": 1,
+      "image": "property_images/p1_img1.jpg"
+    }
+  },
+  {
+    "model": "apps.propertyimage",
+    "pk": 2,
+    "fields": {
+      "property": 1,
+      "image": "property_images/p1_img2.jpg"
+    }
+  },
+  {
+    "model": "apps.propertyimage",
+    "pk": 3,
+    "fields": {
+      "property": 2,
+      "image": "property_images/p2_img1.jpg"
+    }
+  },
+  {
+    "model": "apps.propertyimage",
+    "pk": 4,
+    "fields": {
+      "property": 3,
+      "image": "property_images/p3_img1.jpg"
+    }
+  },
+  {
+    "model": "apps.propertyimage",
+    "pk": 5,
+    "fields": {
+      "property": 3,
+      "image": "property_images/p3_img2.jpg"
+    }
+  }
+]

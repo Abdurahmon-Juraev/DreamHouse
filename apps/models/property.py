@@ -77,6 +77,9 @@ class Property(Model):
     created_at = DateTimeField(auto_now_add=True)
     updated_at = DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
 
 class PropertyImage(Model):
     property = ForeignKey(Property, related_name='images', on_delete=CASCADE)

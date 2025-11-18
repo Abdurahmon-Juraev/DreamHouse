@@ -4,9 +4,9 @@ from django.urls import path
 urlpatterns = [
     path('auth/send-code', SendCodeAPIView.as_view(), name='token_obtain_pair'),
     path('auth/verify-code', LoginAPIView.as_view(), name='token_obtain_pair'),
-    path('properties/', PropertyListCreateView.as_view(), name='property-list'),
-    path('properties/<int:pk>/', PropertyDetailAPIView.as_view(), name='property-detail'),
-    # path('properties/<int:pk>/images/', PropertyImageUploadView.as_view(), name='property-images'),
+    path('properties/', PropertyListCreateView.as_view(), name='property.json-list'),
+    path('properties/<int:pk>/', PropertyDetailAPIView.as_view(), name='property.json-detail'),
+    # path('properties/<int:pk>/images/', PropertyImageUploadView.as_view(), name='property.json-images'),
     # path('categories/', CategoryListView.as_view(), name='category-list'),
     # path('cities/', CityListView.as_view(), name='city-list'),
     # path('districts/', DistrictListView.as_view(), name='district-list'),

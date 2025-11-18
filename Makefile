@@ -5,3 +5,6 @@ mig:
 
 user:
 	python3 manage.py createsuperuser
+
+loaddata:
+	python3 manage.py loaddata users userprofile city district property propertyimage like

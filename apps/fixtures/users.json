@@ -1,0 +1,162 @@
+[
+  {
+    "model": "apps.user",
+    "pk": 1,
+    "fields": {
+      "phone": "900000001",
+      "is_agent": false,
+      "first_name": "Ali",
+      "last_name": "Karimov",
+      "email": "ali.karimov@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-01T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 2,
+    "fields": {
+      "phone": "900000002",
+      "is_agent": true,
+      "first_name": "Sarvar",
+      "last_name": "Nabiev",
+      "email": "sarvar.nabiev@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-02T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 3,
+    "fields": {
+      "phone": "900000003",
+      "is_agent": false,
+      "first_name": "Rayhona",
+      "last_name": "Murodova",
+      "email": "rayhona.murodova@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-03T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 4,
+    "fields": {
+      "phone": "900000004",
+      "is_agent": true,
+      "first_name": "Javlon",
+      "last_name": "Akramov",
+      "email": "javlon.akramov@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-04T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 5,
+    "fields": {
+      "phone": "900000005",
+      "is_agent": false,
+      "first_name": "Aziza",
+      "last_name": "Mamatqulova",
+      "email": "aziza.mamatqulova@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-05T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 6,
+    "fields": {
+      "phone": "900000006",
+      "is_agent": true,
+      "first_name": "Kamron",
+      "last_name": "Abdullayev",
+      "email": "kamron.abdullayev@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-06T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 7,
+    "fields": {
+      "phone": "900000007",
+      "is_agent": false,
+      "first_name": "Nodira",
+      "last_name": "Qurbonova",
+      "email": "nodira.qurbonova@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-07T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 8,
+    "fields": {
+      "phone": "900000008",
+      "is_agent": true,
+      "first_name": "Sherzod",
+      "last_name": "Olimov",
+      "email": "sherzod.olimov@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-08T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 9,
+    "fields": {
+      "phone": "900000009",
+      "is_agent": false,
+      "first_name": "Gulnora",
+      "last_name": "Rashidova",
+      "email": "gulnora.rashidova@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-09T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  },
+  {
+    "model": "apps.user",
+    "pk": 10,
+    "fields": {
+      "phone": "900000010",
+      "is_agent": true,
+      "first_name": "Behruz",
+      "last_name": "Xudoyberdiyev",
+      "email": "behruz.xudoyberdiyev@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2025-01-10T10:00:00Z",
+      "password": "pbkdf2_sha256$260000$test$Q2FeK9rj5k0="
+    }
+  }
+]

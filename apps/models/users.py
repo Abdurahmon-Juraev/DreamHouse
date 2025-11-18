@@ -37,5 +37,9 @@ class UserProfile(Model):
         OWNER = 'owner', 'Owner'
 
     user = OneToOneField(User, CASCADE)
-    CompanyName = CharField(max_length=30, blank=True)
-    TypeUser = CharField(max_length=15, choices=UserType.choices, default=UserType.Private_owner)
+    companyname = CharField(max_length=30, blank=True)
+    typeuser = CharField(max_length=15, choices=UserType.choices, default=UserType.Private_owner)
+
+
+    def __str__(self):
+        return f"{self.user} - {self.user.first_name}"

@@ -1,0 +1,47 @@
+[
+  {
+    "model": "apps.userprofile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "companyname": "Best Homes",
+      "typeuser": "owner"
+    }
+  },
+  {
+    "model": "apps.userprofile",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "companyname": "Dream Estate",
+      "typeuser": "private_owner"
+    }
+  },
+  {
+    "model": "apps.userprofile",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "companyname": "Golden House",
+      "typeuser": "owner"
+    }
+  },
+  {
+    "model": "apps.userprofile",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "companyname": "",
+      "typeuser": "private_owner"
+    }
+  },
+  {
+    "model": "apps.userprofile",
+    "pk": 5,
+    "fields": {
+      "user": 5,
+      "companyname": "Uzum Realty",
+      "typeuser": "owner"
+    }
+  }
+]
